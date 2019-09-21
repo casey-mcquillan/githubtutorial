@@ -24,14 +24,10 @@ def eul_err(b2, *args):
     '''
     # Put code here.
 
-
-
     #Calculate LHS of equation #30
     c1 = household.get_c1(b2, args)
     MUc1 = household.get_MUc(c1, gamma)
     LHS = hh.get_MUc(c1, gamma)
-
-
 
     #Calculate RHS of equation #30
     beta = args[4]
