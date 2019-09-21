@@ -17,7 +17,7 @@ def get_K(b2):
     market clearing condition for the capital market (25) to return
     aggregate capital K as a function of savings b2.
     '''
-    # Put code here.
+    K = b2
 
     return K
 
@@ -30,6 +30,8 @@ def get_L(nvec):
     array (1-dimensional vector) with two elements n1 and n2
     '''
     # Put code here.
+
+    L = nvec[0] + nvec[1]
 
     return L
 
@@ -44,6 +46,16 @@ def get_r(b2, args):
     '''
     # Put code here.
 
+    nvec = args[0]
+    alpha = args[1]
+    A = args[2]
+    delta = args[3]
+
+    K = get_K(b2)
+    L = get_L(nvec)
+
+    r = alpha * A * (L / K)^(1-alpha) - delta
+
     return r
 
 
@@ -56,5 +68,14 @@ def get_w(b2, args):
     this function.
     '''
     # Put code here.
+
+    nvec = args[0]
+    alpha = args[1]
+    A = args[2]
+
+    K = get_K(b2)
+    L = get_L(nvec)
+
+    r = (1 - alpha) * A * (K / L)^(alpha)
 
     return w

@@ -5,7 +5,7 @@ consumption in the two-period-lived overlapping generations model.
 '''
 
 # Put import commands below here
-
+import FirmsMC as fmc
 
 # Fill in the functions below
 
