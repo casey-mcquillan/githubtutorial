@@ -72,7 +72,7 @@ def get_r(b2, args):
         returns value for r
     '''
     
-    nvec, alpha, A, delta = args
+    nvec, alpha, A, delta, beta, gamma = args
     K = get_K(b2)
     L = get_L(nvec)
     r = alpha * A * (L / K) ** (1 - alpha)  - delta
@@ -109,7 +109,7 @@ def get_w(b2, args):
         returns value for w
     '''
     
-    nvec, alpha, A = args
+    nvec, alpha, A, delta, beta, gamma = args
     K = get_K(b2)
     L = get_L(nvec)
     w = (1 - alpha) * A * (K / L) ** alpha
