@@ -45,7 +45,6 @@ def get_L(nvec):
     L : numeric
         returns value for L
     '''
-    L= np.sum(nvec)
 
     L = nvec[0] + nvec[1]
 
@@ -66,6 +65,8 @@ def get_r(b2, args):
             - alpha: numeric [0,1]
             - A: numeric
             - delta: numeric
+            - beta
+            - gamma
     Returns
     -------
     r : numeric
@@ -73,19 +74,10 @@ def get_r(b2, args):
     '''
     
     nvec, alpha, A, delta, beta, gamma = args
+
     K = get_K(b2)
     L = get_L(nvec)
     r = alpha * A * (L / K) ** (1 - alpha)  - delta
-
-    nvec = args[0]
-    alpha = args[1]
-    A = args[2]
-    delta = args[3]
-
-    K = get_K(b2)
-    L = get_L(nvec)
-
-    r = alpha * A * (L / K)^(1-alpha) - delta
 
     return r
 
@@ -103,24 +95,17 @@ def get_w(b2, args):
             - nvec: np.array (1 dimension) with n1 and n2
             - alpha: numeric [0,1]
             - A: numeric
+            - delta: numeric
+            - beta
     Returns
     -------
     w : numeric
         returns value for w
     '''
-    
     nvec, alpha, A, delta, beta, gamma = args
     K = get_K(b2)
     L = get_L(nvec)
     w = (1 - alpha) * A * (K / L) ** alpha
 
-    nvec = args[0]
-    alpha = args[1]
-    A = args[2]
-
-    K = get_K(b2)
-    L = get_L(nvec)
-
-    r = (1 - alpha) * A * (K / L)^(alpha)
 
     return w

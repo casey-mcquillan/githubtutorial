@@ -22,7 +22,7 @@ def get_c1(b2, args):
     nvec, alpha, A, delta, beta, gamma = args
 
     # get w, n
-    w = FirmsMC.get_w(b2, args=(nvec, alpha, A))
+    w = FirmsMC.get_w(b2, args)
     n1 = nvec[0]
 
     # specify c1
@@ -43,8 +43,8 @@ def get_c2(b2, args):
     # unpack arguments
     nvec, alpha, A, delta, beta, gamma = args
 
-    r = FirmsMC.get_r(b2, (nvec, alpha, A))
-    w = FirmMC.get_w(b2, (nvec, alpha, A, delta))
+    r = FirmsMC.get_r(b2, args)
+    w = FirmsMC.get_w(b2, args)
     n2 = nvec[1]
 
     # specify c2
@@ -65,6 +65,7 @@ def get_MUc(c, gamma):
         raise Exception
     if gamma <= 0:
         raise Exception
+        print("Gamma issue")
 
     # specify marginal utility
     MUc = c**(-gamma)
