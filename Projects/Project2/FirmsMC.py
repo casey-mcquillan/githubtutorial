@@ -14,7 +14,7 @@ def get_K(b2):
     This will be a pretty simple function. Use steady-state equilibrium
     market clearing condition for the capital market (25) to return
     aggregate capital K as a function of savings b2.
-    
+
     Parameters
     ----------
     b2 : numeric
@@ -45,11 +45,10 @@ def get_L(nvec):
     L : numeric
         returns value for L
     '''
-    L= np.sum(nvec)
-
-    L = nvec[0] + nvec[1]
+    L = np.sum(nvec)
 
     return L
+
 
 def get_r(b2, args):
     '''
@@ -77,17 +76,8 @@ def get_r(b2, args):
     L = get_L(nvec)
     r = alpha * A * (L / K) ** (1 - alpha)  - delta
 
-    nvec = args[0]
-    alpha = args[1]
-    A = args[2]
-    delta = args[3]
-
-    K = get_K(b2)
-    L = get_L(nvec)
-
-    r = alpha * A * (L / K)**(1-alpha) - delta
-
     return r
+
 
 def get_w(b2, args):
     '''
@@ -113,14 +103,5 @@ def get_w(b2, args):
     K = get_K(b2)
     L = get_L(nvec)
     w = (1 - alpha) * A * (K / L) ** alpha
-
-    nvec = args[0]
-    alpha = args[1]
-    A = args[2]
-
-    K = get_K(b2)
-    L = get_L(nvec)
-
-    r = (1 - alpha) * A * (K / L)**(alpha)
 
     return w

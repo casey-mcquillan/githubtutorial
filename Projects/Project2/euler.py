@@ -22,15 +22,10 @@ def eul_err(b2, *args):
     this function are sufficient for everything you need to calculate
     the error form of (30).
     '''
-
-
     gamma = args[5]
-
 
     #Calculate LHS of equation #30
     c1 = household.get_c1(b2, args)
-
-    MUc1 = household.get_MUc(c1, gamma)
     LHS = household.get_MUc(c1, gamma)
 
     #Calculate RHS of equation #30
@@ -38,14 +33,12 @@ def eul_err(b2, *args):
     r = FirmsMC.get_r(b2, args)
     c2 = household.get_c2(b2, args)
     MUc2 = household.get_MUc(c2, gamma)
-    RHS =  beta * (1 + r) * MUc2
+    RHS = beta * (1 + r) * MUc2
 
     #Calculate using LHS and RHS
     error = LHS - RHS
 
     return error
-
-
 
 
 def get_b2(args):

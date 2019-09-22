@@ -8,9 +8,8 @@ consumption in the two-period-lived overlapping generations model.
 # Put import commands below here
 import FirmsMC
 
+
 # Fill in the functions below
-
-
 def get_c1(b2, args):
     '''
     Use steady-state equilibrium young age s=1 budget constraint (26) to
