@@ -4,14 +4,12 @@ the household consumptions c1 and c2 as well as the marginal utility of
 consumption in the two-period-lived overlapping generations model.
 '''
 
-<<<<<<< HEAD
+
 # Put import commands below here
 import FirmsMC
 
 # Fill in the functions below
-=======
-import FirmsMC
->>>>>>> upstream/master
+
 
 def get_c1(b2, args):
     '''

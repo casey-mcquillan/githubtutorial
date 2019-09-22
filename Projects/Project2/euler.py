@@ -31,12 +31,7 @@ def eul_err(b2, *args):
     c1 = household.get_c1(b2, args)
 
     MUc1 = household.get_MUc(c1, gamma)
-<<<<<<< HEAD
-    LHS = hh.get_MUc(c1, gamma)
-=======
-
     LHS = household.get_MUc(c1, gamma)
->>>>>>> upstream/master
 
     #Calculate RHS of equation #30
     beta = args[4]
